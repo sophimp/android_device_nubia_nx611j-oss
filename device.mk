@@ -21,7 +21,7 @@
 # definition file).
 #
 
-$(call inherit-product, vendor/xiaomi/clover/clover-vendor.mk)
+$(call inherit-product, vendor/nubia/nx611j/nx611j-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -258,7 +258,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.xiaomi_clover
+    android.hardware.light@2.0-service.nubia_nx611j
 
 # LiveDisplay native
 PRODUCT_PACKAGES += \
@@ -338,10 +338,6 @@ PRODUCT_PACKAGES += \
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
-
-# Recovery
-PRODUCT_PACKAGES += \
-    librecovery_updater_clover
 
 # RIL
 PRODUCT_PACKAGES += \

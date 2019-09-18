@@ -21,14 +21,14 @@
 # definition file).
 #
 
-DEVICE_PATH := device/xiaomi/clover
+DEVICE_PATH := device/nubia/nx611j
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm660
 TARGET_NO_BOOTLOADER := true
 
 # Platform
-BOARD_VENDOR := xiaomi
+BOARD_VENDOR := nubia
 TARGET_BOARD_PLATFORM := sdm660
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno512
 
@@ -57,8 +57,8 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/xiaomi/clover
-TARGET_KERNEL_CONFIG := clover-perf_defconfig
+TARGET_KERNEL_SOURCE := kernel/nubia/sdm60
+TARGET_KERNEL_CONFIG := mokee_nx611j_defconfig
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
@@ -68,7 +68,7 @@ TARGET_USE_SDCLANG := true
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := clover
+TARGET_OTA_ASSERT_DEVICE := nx611j,NX611J
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -247,4 +247,4 @@ ifeq ($(HOST_OS),linux)
 endif
 
 # inherit from the proprietary version
--include vendor/xiaomi/clover/BoardConfigVendor.mk
+-include vendor/nubia/nx611j/BoardConfigVendor.mk
