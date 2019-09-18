@@ -227,10 +227,6 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 # Use mke2fs to create ext4 images
 TARGET_USES_MKE2FS := true
 
-# Vendor init
-TARGET_INIT_VENDOR_LIB := libinit_clover
-TARGET_RECOVERY_DEVICE_MODULES := libinit_clover
-
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true
