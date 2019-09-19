@@ -39,6 +39,11 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 TARGET_SCREEN_HEIGHT := 2160
 TARGET_SCREEN_WIDTH := 1080
 
+# Override heap growth limit due to high display density on device
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapgrowthlimit=256m
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/whitelistedapps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/whitelistedapps.xml \
                       $(LOCAL_PATH)/configs/gamedwhitelist.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gamedwhitelist.xml \
                       $(LOCAL_PATH)/configs/appboosts.xml:$(TARGET_COPY_OUT_VENDOR)/etc/appboosts.xml
