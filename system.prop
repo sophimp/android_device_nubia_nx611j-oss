@@ -143,3 +143,30 @@ ro.vendor.qti.sys.fw.bg_apps_limit=60
 ro.vendor.qti.config.zram=true
 persist.chg.max_volt_mv=9000
 sdm.debug.disable_skip_validate=1
+
+#
+# sepcific prop for nubia z18 mini (system.prop)
+#
+
+# Nubia Breath Light
+#1:top breath,2:home 3:left+right; default value:2
+ro.poweroff_breath_type=1
+# defaut vaule:16,top breath,red+green:3248;left+right:6448
+ro.poweroff_outchannel=4864
+ro.poweroff_breath_bright_dir=/sys/class/leds/nubia_led/grade_parameter
+ro.poweroff_breath_brightness=128 255
+ro.poweroff_breath_blink=/sys/class/leds/nubia_led/blink_mode
+persist.sys.design_capacity=3450000
+persist.sys.design_charge_cycle=500
+
+# Nubia Camera
+vendor.camera.aux.packagelist=com.android.camera,cn.nubia.factory,org.codeaurora.snapcam
+persist.camera.preview.ubwc=0
+ro.total.camera.number=3
+persist.camera.depth.focus.cb=0
+ro.config.devicename=nubia
+persist.sys.exif.model=nubia Z18mini
+
+# Nubia Display
+ro.sf.lcd_density=480
+qemu.hw.mainkeys=0

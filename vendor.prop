@@ -73,6 +73,12 @@ rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 ro.control_privapp_permissions=log
 ro.opa.eligible_device=true
 drm.service.enabled=true
+
+#
+# sepcific prop for nubia z18 mini (vendor.prop)
+#
+
+# Camera
 persist.camera.stats.test=5
 persist.camera.HAL3.enabled=1
 
@@ -89,7 +95,7 @@ persist.vendor.radio.data_con_rprt=1
 persist.radio.calls.on.ims=1
 
 # Security patch level
-ro.vendor.build.security_patch=2018-10-01
+ro.vendor.build.security_patch=2018-02-05
 
 # Maintainer
-ro.mk.maintainer=guaiyihu
+ro.mk.maintainer=Cyborg2017(Yang Cyborg)
