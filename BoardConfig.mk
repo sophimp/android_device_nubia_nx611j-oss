@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 The Mokee Project
+# Copyright (C) 2019 The Mokee Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -152,7 +152,7 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 
 # DT2W
-TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc/c177000.i2c/i2c-3/3-0038/fts_gesture_mode"
+TARGET_TAP_TO_WAKE_NODE := "/data/tp/easy_wakeup_gesture"
 
 # EXFAT
 TARGET_EXFAT_DRIVER := exfat
