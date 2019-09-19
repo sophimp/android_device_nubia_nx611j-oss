@@ -1,5 +1,5 @@
 # 
-# Copyright (C) 2018 The Mokee Project
+# Copyright (C) 2019 The Mokee Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,7 +16,7 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from nx611j device
 $(call inherit-product, device/nubia/nx611j/device.mk)
