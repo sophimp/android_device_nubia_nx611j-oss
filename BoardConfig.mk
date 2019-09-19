@@ -196,7 +196,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_USES_INTERACTION_BOOST := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/recovery.fstab
 
 # RIL
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
