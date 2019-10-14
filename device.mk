@@ -219,11 +219,9 @@ PRODUCT_COPY_FILES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.fm.transmitter=false
+    FM2 \
+    libfmjni \
+    qcom.fmradio
 
 PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
