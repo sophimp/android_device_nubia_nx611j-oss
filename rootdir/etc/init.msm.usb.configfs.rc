@@ -25,6 +25,9 @@
 # OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
+# MIUI ADD
+on property:vold.decrypt=trigger_restart_framework
+    setprop sys.usb.config ${persist.sys.usb.config}
 
 # USB compositions
 on property:sys.usb.config=mass_storage && property:sys.usb.configfs=1
@@ -37,8 +40,8 @@ on property:sys.usb.config=mass_storage && property:sys.usb.configfs=1
     rm /config/usb_gadget/g1/configs/b.1/f6
     rm /config/usb_gadget/g1/configs/b.1/f7
     rm /config/usb_gadget/g1/configs/b.1/f8
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0xF000
+    write /config/usb_gadget/g1/idVendor 0x2717
+    write /config/usb_gadget/g1/idProduct 0xff20
     symlink /config/usb_gadget/g1/functions/mass_storage.0 /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
@@ -56,8 +59,8 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mass_storage,adb && p
     rm /config/usb_gadget/g1/configs/b.1/f6
     rm /config/usb_gadget/g1/configs/b.1/f7
     rm /config/usb_gadget/g1/configs/b.1/f8
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0x9015
+    write /config/usb_gadget/g1/idVendor 0x2717
+    write /config/usb_gadget/g1/idProduct 0xff28
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/mass_storage.0 /config/usb_gadget/g1/configs/b.1/f2
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
@@ -155,8 +158,8 @@ on property:sys.usb.config=rndis,none && property:sys.usb.configfs=1
     rm /config/usb_gadget/g1/configs/b.1/f6
     rm /config/usb_gadget/g1/configs/b.1/f7
     rm /config/usb_gadget/g1/configs/b.1/f8
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0xF00E
+    write /config/usb_gadget/g1/idVendor 0x2717
+    write /config/usb_gadget/g1/idProduct 0xFF80
     symlink /config/usb_gadget/g1/functions/${sys.usb.rndis.func.name}.rndis /config/usb_gadget/g1/configs/b.1/f1
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state rndis
@@ -177,8 +180,8 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,none,adb && pro
     rm /config/usb_gadget/g1/configs/b.1/f6
     rm /config/usb_gadget/g1/configs/b.1/f7
     rm /config/usb_gadget/g1/configs/b.1/f8
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0x9024
+    write /config/usb_gadget/g1/idVendor 0x2717
+    write /config/usb_gadget/g1/idProduct 0xff88
     symlink /config/usb_gadget/g1/functions/${sys.usb.rndis.func.name}.rndis /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
@@ -259,46 +262,6 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,serial_cdev,adb
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state rndis,adb
-
-on property:sys.usb.config=diag,serial_cdev,serial_cdev && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "diag_dun_nmea"
-    rm /config/usb_gadget/g1/configs/b.1/f1
-    rm /config/usb_gadget/g1/configs/b.1/f2
-    rm /config/usb_gadget/g1/configs/b.1/f3
-    rm /config/usb_gadget/g1/configs/b.1/f4
-    rm /config/usb_gadget/g1/configs/b.1/f5
-    rm /config/usb_gadget/g1/configs/b.1/f6
-    rm /config/usb_gadget/g1/configs/b.1/f7
-    rm /config/usb_gadget/g1/configs/b.1/f8
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0x9016
-    symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
-    symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/cser.nmea.1 /config/usb_gadget/g1/configs/b.1/f3
-    write /config/usb_gadget/g1/UDC ${sys.usb.controller}
-    setprop sys.usb.state diag,serial_cdev,serial_cdev
-
-on property:sys.usb.config=diag,serial_cdev,serial_cdev,adb && property:sys.usb.configfs=1
-    start adbd
-
-on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,serial_cdev,serial_cdev,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "diag_dun_nmea_adb"
-    rm /config/usb_gadget/g1/configs/b.1/f1
-    rm /config/usb_gadget/g1/configs/b.1/f2
-    rm /config/usb_gadget/g1/configs/b.1/f3
-    rm /config/usb_gadget/g1/configs/b.1/f4
-    rm /config/usb_gadget/g1/configs/b.1/f5
-    rm /config/usb_gadget/g1/configs/b.1/f6
-    rm /config/usb_gadget/g1/configs/b.1/f7
-    rm /config/usb_gadget/g1/configs/b.1/f8
-    write /config/usb_gadget/g1/idVendor 0x05C6
-    write /config/usb_gadget/g1/idProduct 0x9020
-    symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
-    symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f3
-    symlink /config/usb_gadget/g1/functions/cser.nmea.1 /config/usb_gadget/g1/configs/b.1/f4
-    write /config/usb_gadget/g1/UDC ${sys.usb.controller}
-    setprop sys.usb.state diag,serial_cdev,serial_cdev,adb
 
 on property:sys.usb.config=rndis,serial_cdev,diag && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "rndis_dun_diag"
@@ -827,20 +790,20 @@ on property:sys.usb.config=adb && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idProduct 0x4ee7
 
 on property:sys.usb.config=mtp && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x18d1
-    write /config/usb_gadget/g1/idProduct 0x4ee1
+    write /config/usb_gadget/g1/idVendor 0x2717
+    write /config/usb_gadget/g1/idProduct 0xff40
 
 on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x18d1
-    write /config/usb_gadget/g1/idProduct 0x4ee2
+    write /config/usb_gadget/g1/idVendor 0x2717
+    write /config/usb_gadget/g1/idProduct 0xff48
 
 on property:sys.usb.config=ptp && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x18d1
-    write /config/usb_gadget/g1/idProduct 0x4ee5
+    write /config/usb_gadget/g1/idVendor 0x2717
+    write /config/usb_gadget/g1/idProduct 0xff10
 
 on property:sys.usb.config=ptp,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x18d1
-    write /config/usb_gadget/g1/idProduct 0x4ee6
+    write /config/usb_gadget/g1/idVendor 0x2717
+    write /config/usb_gadget/g1/idProduct 0xff18
 
 on property:sys.usb.config=accessory && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idVendor 0x18d1
