@@ -555,6 +555,11 @@ service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
     oneshot
+    
+service sensor-sh /vendor/bin/init.qcom.sensors.sh
+    class core
+    user root
+    oneshot
 
 service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     class late_start
