@@ -62,9 +62,13 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/nubia/sdm660
 TARGET_KERNEL_CONFIG := mokee_nx611j_defconfig
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_VERSION := 4.4
-TARGET_KERNEL_CLANG_VERSION := r365631c
+
+# Kernel - Clang
+ifneq ($(wildcard $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r365631c),)
+    TARGET_KERNEL_CLANG_COMPILE := true
+    TARGET_KERNEL_VERSION := 4.4
+    TARGET_KERNEL_CLANG_VERSION := r365631c
+endif
 
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
