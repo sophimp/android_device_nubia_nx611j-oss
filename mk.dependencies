@@ -10,11 +10,5 @@
  {
     "repository": "android_packages_resources_devicesettings",
     "target_path": "packages/resources/devicesettings"
- },
- {
-    "remote": "github",
-    "repository": "Cyborg2017/prebuilts_clang_host_linux-x86_clang-r365631c",
-    "target_path": "prebuilts/clang/host/linux-x86/clang-r365631c",
-    "revision": "master"
  }
 ]
