@@ -80,6 +80,7 @@ TARGET_USE_SDCLANG := true
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 # Assert
+TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 TARGET_OTA_ASSERT_DEVICE := nx611j,NX611J
 
 # Audio
