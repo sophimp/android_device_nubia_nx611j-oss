@@ -289,6 +289,14 @@ PRODUCT_PACKAGES += \
     libandroid_net \
     netutils-wrapper-1.0
 
+# Ifaa
+PRODUCT_PACKAGES += \
+    NBIFAAService \
+    ifaa_fingerprint
+
+PRODUCT_BOOT_JARS += \
+    ifaa_fingerprint
+
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
