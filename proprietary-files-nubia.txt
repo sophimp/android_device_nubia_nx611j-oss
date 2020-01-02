@@ -632,6 +632,14 @@ vendor/lib64/libqfp-service.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 vendor/lib64/vendor.sw.swfingerprint@1.0.so
 
+# Fingerprint -ifaa (from nubia nx609j)
+framework/ifaa_fingerprint.jar:vendor/framework/ifaa_fingerprint.jar
+framework/vendor.nubia.ifaa-V1.0-java.jar:vendor/framework/vendor.nubia.ifaa-V1.0-java.jar
+lib/vendor.nubia.ifaa@1.0.so:vendor/lib/vendor.nubia.ifaa@1.0.so
+lib64/vendor.nubia.ifaa@1.0.so:vendor/lib64/vendor.nubia.ifaa@1.0.so
+vendor/lib/vendor.nubia.ifaa@1.0-impl.so:vendor/lib/vendor.nubia.ifaa@1.0-impl.so
+vendor/lib64/vendor.nubia.ifaa@1.0-impl.so:vendor/lib64/vendor.nubia.ifaa@1.0-impl.so
+
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
