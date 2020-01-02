@@ -88,6 +88,15 @@ persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
 
+# Sensors
+ro.vendor.sensors.dev_ori=true
+ro.vendor.sensors.pmd=true
+ro.vendor.sensors.sta_detect=true
+ro.vendor.sensors.mot_detect=true
+ro.vendor.sensors.dpc=true
+ro.vendor.sensors.multishake=true
+persist.vendor.sensors.direct_channel=true
+
 # Radio Options
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.data_ltd_sys_ind=1
