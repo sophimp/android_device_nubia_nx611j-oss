@@ -200,9 +200,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
-    android.hardware.drm@1.2-service.clearkey
+    android.hardware.drm@1.2-service.clearkey \
+    android.hardware.drm@1.0-service.widevine
 
-# Fingerprint feature
+# Fingerprintster
+ PRODUCT_PACKAGES += \
+	android.hardware.keymaster@3.0-impl \
+	android.hardware.keymaster@3.0-servicefeature
+
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service \
     fingerprint.sdm660 \
@@ -278,7 +283,15 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay native
 PRODUCT_PACKAGES += \
-    vendor.mokee.livedisplay@2.0-service-sdm
+	livedisplay_sdm_defaults \
+    vendor.mokee.livedisplay@2.0\
+    mokee.livedisplay@2.0-service-sdm \
+    vendor.mokee.livedisplay@2.0-service-sdm \
+	mokee.livedisplay@2.0-service-sysfs \
+	vendor.mokee.livedisplay@2.0-service-sysfs \
+    android.frameworks.displayservice@1.0 \
+    vendor.display.config@1.1 \
+    vendor.display.config@1.1_vendor
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -423,7 +436,7 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service
 
 # VNDK
-PRODUCT_PACKAGES += vndk-sp
+#PRODUCT_PACKAGES += vndk-sp
 
 # Wifi
 PRODUCT_PACKAGES += \
